@@ -1,7 +1,7 @@
 FROM node:22-bookworm-slim AS client-build
 WORKDIR /app/client
 COPY client/package*.json ./
-RUN npm install
+RUN npm install --include=dev
 COPY client/ ./
 RUN npm run build
 
